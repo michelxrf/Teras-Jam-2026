@@ -70,8 +70,14 @@ public class Cat : MonoBehaviour
     {
         _IsAggressive = true;
         SetNewDestination();
-        _audioSource.clip = _agressiveClip;
-        _audioSource.Play();
+
+        if(_audioSource.clip != _agressiveClip)
+        {
+            _audioSource.Stop();
+            _audioSource.clip = _agressiveClip;
+            _audioSource.Play();
+        }
+
         hitbox.enabled = true;
         _navAgent.speed = _aggressiveSpeed;
     }
@@ -79,8 +85,14 @@ public class Cat : MonoBehaviour
     public void BecomePassive()
     {
         _IsAggressive = false;
-        _audioSource.clip = _passiveClip;
-        _audioSource.Play();
+
+        if(_audioSource.clip != _passiveClip)
+        {
+            _audioSource.Stop();
+            _audioSource.clip = _passiveClip;
+            _audioSource.Play();
+        }
+
         hitbox.enabled = false;
         _navAgent.speed = _passiveSpeed;
     }

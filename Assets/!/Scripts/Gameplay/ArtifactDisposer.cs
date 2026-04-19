@@ -20,7 +20,7 @@ public class ArtifactDisposer : MonoBehaviour
 
             if (_artifactCount <= 0)
             {
-                Debug.Log("Win");
+                FindFirstObjectByType<GameOver>().Gameover(true);
             }
         }
     }

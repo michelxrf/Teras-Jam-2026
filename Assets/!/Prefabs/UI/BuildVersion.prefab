@@ -111,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1128439911749582372}
-  - component: {fileID: 8768166849997820823}
+  - component: {fileID: 2565568690943637827}
   m_Layer: 0
   m_Name: BuildVersion
   m_TagString: Untagged
@@ -135,7 +135,7 @@ Transform:
   - {fileID: 5536281580590749093}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8768166849997820823
+--- !u!114 &2565568690943637827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2888339636850240155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b2bac0bcdbf964f88378d645b48447, type: 3}
+  m_Script: {fileID: 11500000, guid: f0e4dbee648008548a8a1db5157e6b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DisplayBuild
   text: {fileID: 4325446841798164924}

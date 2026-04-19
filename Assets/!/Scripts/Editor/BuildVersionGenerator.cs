@@ -4,7 +4,6 @@ using UnityEditor.Build.Reporting;
 using System.Diagnostics;
 using System.IO;
 
-
 /// <summary>
 /// Generates a build verision name at build time
 /// </summary>

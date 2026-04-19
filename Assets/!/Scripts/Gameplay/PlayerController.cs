@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Vector2 _moveInput;
     Vector2 _lookInput;
     float _cameraPitchRotation = 0f;
+    public bool _isDead = false;
 
     const float _minCameraRotation = -60f;
     const float _maxCameraRotation = 60f;
@@ -19,18 +20,27 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
     }
 
     private void Update()
     {
+        if(_isDead) return;
         HandleLook();
     }
 
     private void FixedUpdate()
     {
+        if (_isDead) return;
         HandleMovement();
+    }
+
+    public void Die()
+    {
+        _isDead = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void HandleMovement()

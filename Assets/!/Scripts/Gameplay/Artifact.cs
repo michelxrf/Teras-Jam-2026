@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class Artifact : MonoBehaviour
@@ -51,8 +50,6 @@ public class Artifact : MonoBehaviour
 
     public void AddCat(Cat cat)
     {
-        Debug.Log($"Adding cat {cat.name} to artifact influence.");
-
         if (!_affectedCats.Contains(cat))
         {
             _affectedCats.Add(cat);
@@ -64,8 +61,6 @@ public class Artifact : MonoBehaviour
 
     public void RemoveCat(Cat cat)
     {
-        Debug.Log($"Removing cat {cat.name} from artifact influence.");
-
         if (_affectedCats.Contains(cat))
         {
             _affectedCats.Remove(cat);

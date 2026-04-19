@@ -11,7 +11,6 @@ public class Interactions : MonoBehaviour
     [SerializeField] AudioClip[] audioClips;
 
     [Header("Settings")]
-    [SerializeField] float interactionRange = 3f;
     [SerializeField] bool singleActivation = false;
     [SerializeField] float delayBetweenBarks = 1f;
 
@@ -20,7 +19,6 @@ public class Interactions : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<SphereCollider>().radius = interactionRange;
         BarkBalloon.SetActive(false);
         audioSource = GetComponent<AudioSource>();
     }
@@ -35,7 +33,6 @@ public class Interactions : MonoBehaviour
 
     private void ActivateBark()
     {
-        Debug.Log("Activating Bark Sequence");
         isInteracting = true;
         BarkBalloon.SetActive(true);
         StartCoroutine(PlayBarkSequence());
@@ -49,7 +46,6 @@ public class Interactions : MonoBehaviour
 
             if (audioClips.Length > i && audioClips[i] != null)
             {
-                Debug.Log($"Playing audio for bark {i}");
                 audioSource.PlayOneShot(audioClips[i]);
                 yield return new WaitForSeconds(audioClips[i].length + delayBetweenBarks);
             }

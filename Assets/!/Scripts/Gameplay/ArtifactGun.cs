@@ -47,9 +47,6 @@ public class ArtifactGun : MonoBehaviour
         RaycastHit hit;
         bool didHit = Physics.Raycast(_gun.transform.position, -_gun.transform.forward, out hit, 5f, LayerMask.GetMask("Artifacts"));
 
-        // Draw the ray for debugging - green if hit, white if no hit
-        Color rayColor = didHit ? Color.green : Color.white;
-        Debug.DrawRay(_gun.transform.position, -_gun.transform.forward * 5f, rayColor, 0.1f);
         if(hit.collider != null)
         {
             if(hit.collider.TryGetComponent(out Artifact artifact))

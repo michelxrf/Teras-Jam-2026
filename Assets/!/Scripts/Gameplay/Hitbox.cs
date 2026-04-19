@@ -7,7 +7,7 @@ public class Hitbox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Handle hit logic here, e.g., apply damage to the player
-            Debug.Log("Player hit!");
+            FindFirstObjectByType<GameOver>().Gameover(false);
         }
     }
 }
